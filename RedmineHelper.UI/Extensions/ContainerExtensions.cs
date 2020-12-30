@@ -35,8 +35,8 @@ namespace RedmineHelper.UI.Extensions
             container.Register<BaseMapper, RedmineMapper>(Lifestyle.Transient);
             container.Register<PageSwitcher>(Lifestyle.Transient);
             container.Register<TaskFilter>(Lifestyle.Transient);
-            container.Register<TasksCommands>(Lifestyle.Transient);
-            container.Register<TasksState>(Lifestyle.Transient);
+            container.Register<TasksCommands>(Lifestyle.Scoped);
+            container.Register<TasksState>(Lifestyle.Scoped);
             container.Register<RedmineTaskViewModel>(Lifestyle.Transient);
             container.RegisterHttpFactory();
         }

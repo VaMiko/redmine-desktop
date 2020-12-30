@@ -52,7 +52,7 @@
         /// <summary>
         /// Предыдущая страница
         /// </summary>
-        public NotifyProperty<bool> HasPrev { get; } = new NotifyProperty<bool>(true);
+        public NotifyProperty<bool> HasPrev { get; } = new NotifyProperty<bool>(false);
 
         /// <summary>
         /// Режим списания трудозатрат
