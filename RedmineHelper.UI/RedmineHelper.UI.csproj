@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UseWPF>true</UseWPF>
+        <AssemblyName>RedmineHelper.UI</AssemblyName>
+        <RootNamespace>RedmineHelper.UI</RootNamespace>
+        <GenerateProgramFile>false</GenerateProgramFile>
+        <StartupObject>RedmineHelper.UI.Program</StartupObject>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MaterialDesignThemes" Version="4.0.0-ci2191" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.10" />
+      <PackageReference Include="Microsoft.Extensions.Http" Version="3.1.9" />
+      <PackageReference Include="SimpleInjector" Version="5.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="Images\app_icon.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Images\app_icon.ico" />
+      <Resource Include="Images\app_icon.ico">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Images\xclock_clock_time_5987.ico" />
+      <Resource Include="Images\xclock_clock_time_5987.ico">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Images\logo.png" />
+      <Resource Include="Images\logo.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ApplicationDefinition Remove="App.xaml" />
+      <ApplicationDefinition Include="Views\App.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </ApplicationDefinition>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\RedmineHelper.Mapper\RedmineHelper.Mapper.csproj" />
+      <ProjectReference Include="..\RedmineHelper.Models\RedmineHelper.Models.csproj" />
+      <ProjectReference Include="..\RedmineHelper.Services\RedmineHelper.Services.csproj" />
+      <ProjectReference Include="..\RedmineHelper.ViewModels\RedmineHelper.ViewModels.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Configuration\appsettings.json" />
+      <EmbeddedResource Include="Configuration\appsettings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+    </ItemGroup>
+
+</Project>
