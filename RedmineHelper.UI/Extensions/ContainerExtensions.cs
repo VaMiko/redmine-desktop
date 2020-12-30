@@ -31,13 +31,13 @@ namespace RedmineHelper.UI.Extensions
         public static void RegisterServices(this Container container)
         {
             container.RegisterSingleton<IAccessResolver, RedmineResolver>();
-            container.Register<ITaskAdapter, RedmineTaskAdapter>(Lifestyle.Transient);
-            container.Register<BaseMapper, RedmineMapper>(Lifestyle.Transient);
-            container.Register<PageSwitcher>(Lifestyle.Transient);
-            container.Register<TaskFilter>(Lifestyle.Transient);
+            container.Register<ITaskAdapter, RedmineTaskAdapter>();
+            container.Register<BaseMapper, RedmineMapper>();
+            container.Register<PageSwitcher>();
+            container.Register<TaskFilter>();
             container.Register<TasksCommands>(Lifestyle.Scoped);
             container.Register<TasksState>(Lifestyle.Scoped);
-            container.Register<RedmineTaskViewModel>(Lifestyle.Transient);
+            container.Register<RedmineTaskViewModel>();
             container.RegisterHttpFactory();
         }
 
